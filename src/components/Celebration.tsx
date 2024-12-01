@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import Lottie from 'lottie-react';
-import celebrationAnimation from '../assets/celebration.json';
+// import Lottie from 'lottie-react';
+// import celebrationAnimation from '../assets/celebration.json';
 
 export function Celebration() {
   useEffect(() => {
@@ -49,7 +49,7 @@ export function Celebration() {
         className="absolute top-0 w-full h-full"
       /> */}
       <img 
-        src={`/images/cat${Math.floor(Math.random() * 5) + 1}.gif`} 
+        src={`./weekly_huddle/images/cat${Math.floor(Math.random() * 5) + 1}.gif`} 
         alt="Random Cat" 
         className="  object-contain mt-4 top-0 "
       />

@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
-  base:"weekly_huddle",
+  base:"/weekly_huddle",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

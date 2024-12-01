@@ -36,12 +36,9 @@
 
 // export default EmployeesOfTheWeekMarquee;
 
-import React, { useRef, useEffect, useState } from 'react';
-
+// import React, { useRef, useEffect, useState } from 'react';
 const EmployeesOfTheWeekMarquee = ({ 
-  employees, 
-  speed = 50,
-  className = ""
+    employees = [] as Array<{employeeName: string, emoji: string}>, 
 }) => {
   // Create the marquee text by formatting employees
   const marqueeText = employees.length > 0 

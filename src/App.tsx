@@ -1,16 +1,29 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRightCircleIcon, ListRestart, Shuffle, UndoIcon, Volume2, VolumeX, StickerIcon, TrophyIcon } from "lucide-react";
-import { TimeBadge } from './components/TimeBadge';
-import { ProgressCounter } from './components/ProgressCounter';
-import { Celebration } from './components/Celebration';
-import { PARTICIPANT_NAMES,  MYSTERY_PRIZES, MINI_CHALLENGES, EMPLOYEES_OF_THE_WEEK} from './lib/constants';
-import { nameVariants, celebrationVariants } from './lib/animations';
-import { playRandomClickSound, playSound } from './lib/sounds';
-import EmployeesOfTheWeekMarquee from './components/EmployeesOfTheWeekMarquee';
-
-
+import {
+  ArrowRightCircleIcon,
+  ListRestart,
+  Shuffle,
+  UndoIcon,
+  Volume2,
+  VolumeX,
+  StickerIcon,
+  TrophyIcon,
+} from "lucide-react";
+import { TimeBadge } from "./components/TimeBadge";
+import { ProgressCounter } from "./components/ProgressCounter";
+import { Celebration } from "./components/Celebration";
+import {
+  PARTICIPANT_NAMES,
+  MYSTERY_PRIZES,
+  MINI_CHALLENGES,
+  EMPLOYEES_OF_THE_WEEK,
+} from "./lib/constants";
+import { nameVariants, celebrationVariants } from "./lib/animations";
+import { playRandomClickSound, playSound } from "./lib/sounds";
+import EmployeesOfTheWeekMarquee from "./components/EmployeesOfTheWeekMarquee";
+import logo from "/logo-1pass.svg";
 
 function App() {
   const [names] = useState([...PARTICIPANT_NAMES]);
@@ -19,46 +32,56 @@ function App() {
   const [previousNames, setPreviousNames] = useState<string[]>([]);
   const [isMuted, setIsMuted] = useState(false);
   const [showCelebration, setShowcelebration] = useState(false);
-  
+
   // New states for Mystery Prize and Mini-Challenge
   const [mysteryPrize, setMysteryPrize] = useState<string | null>(null);
-  const [miniChallenge, setMiniChallenge] = useState<{question: string, answer: string} | null>(null);
+  const [miniChallenge, setMiniChallenge] = useState<{
+    question: string;
+    answer: string;
+  } | null>(null);
   const [showMiniChallenge, setShowMiniChallenge] = useState(false);
   const [revealAnswer, setRevealAnswer] = useState(false);
 
   const selectRandomName = () => {
-    const availableNames = names.filter(name => !usedNames.includes(name));
+    const availableNames = names.filter((name) => !usedNames.includes(name));
     if (availableNames.length > 0) {
       if (!isMuted) playRandomClickSound();
-      
+
       const randomIndex = Math.floor(Math.random() * availableNames.length);
       const selectedName = availableNames[randomIndex];
-      
+
       // Generate Mystery Prize
-      const prize = MYSTERY_PRIZES[Math.floor(Math.random() * MYSTERY_PRIZES.length)];
+      const prize =
+        MYSTERY_PRIZES[Math.floor(Math.random() * MYSTERY_PRIZES.length)];
       setMysteryPrize(prize);
 
       // Randomly decide to show Mini-Challenge (1 in 3 chance)
       if (Math.random() < 0.33) {
-        const challenge = MINI_CHALLENGES[Math.floor(Math.random() * MINI_CHALLENGES.length)];
+        const challenge =
+          MINI_CHALLENGES[Math.floor(Math.random() * MINI_CHALLENGES.length)];
         setMiniChallenge(challenge);
         setShowMiniChallenge(true);
         setRevealAnswer(false);
+        if (currentName) {
+          setPreviousNames((prev) => [...prev, currentName]);
+        }
+        setCurrentName(selectedName);
+        setUsedNames((prev) => [...prev, selectedName]);
       } else {
         setMiniChallenge(null);
         setShowMiniChallenge(false);
+        if (currentName) {
+          setPreviousNames((prev) => [...prev, currentName]);
+        }
+        setCurrentName(selectedName);
+        setUsedNames((prev) => [...prev, selectedName]);
       }
-
-      setPreviousNames(prev => [...prev, currentName]);
-      setCurrentName(selectedName);
-      setUsedNames(prev => [...prev, selectedName]);
     }
   };
-
   const goBackToPreviousName = () => {
     const lastName = previousNames.pop();
     if (lastName) {
-      setUsedNames(prev => prev.filter(name => name !== currentName));
+      setUsedNames((prev) => prev.filter((name) => name !== currentName));
       setCurrentName(lastName);
       setPreviousNames(previousNames);
       setMysteryPrize(null);
@@ -68,11 +91,11 @@ function App() {
   };
 
   const toggleMute = () => {
-    setIsMuted(prev => !prev);
+    setIsMuted((prev) => !prev);
   };
 
   const endHuddle = () => {
-    if (!isMuted) playSound('complete');
+    if (!isMuted) playSound("complete");
     setShowcelebration(true);
   };
 
@@ -91,14 +114,14 @@ function App() {
     <div className="w-screen h-screen bg-[#0e0e10] text-white p-6">
       <div className="p-6 h-full">
         <div className="flex justify-between items-center">
-          <img src="/images/logo-1pass.svg" alt="1Password Logo" />
+          <img src={logo} alt="1Password Logo" />
           <TimeBadge />
         </div>
-        
+
         <div className="text-center h-full flex flex-col justify-center items-center gap-9">
           <AnimatePresence mode="wait">
             {!showCelebration ? (
-              <motion.div 
+              <motion.div
                 key="main-content"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -118,19 +141,21 @@ function App() {
 
                 {/* Mystery Prize Section */}
                 {mysteryPrize && (
-                  <motion.div 
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     className="  bg-white/5  rounded-lg p-4 flex items-center gap-2"
                   >
                     <TrophyIcon className="w-6 h-6" />
-                    <span className="text-xl">Mystery award: {mysteryPrize}</span>
+                    <span className="text-xl">
+                      Mystery award: {mysteryPrize}
+                    </span>
                   </motion.div>
                 )}
 
                 {/* Mini-Challenge Section */}
                 {showMiniChallenge && miniChallenge && (
-                  <motion.div 
+                  <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     className="bg-white/5 rounded-lg p-4 flex flex-col items-center gap-3"
@@ -139,9 +164,11 @@ function App() {
                     <h3 className="text-2xl font-semibold">Mini-Challenge</h3>
                     <p className="text-xl">{miniChallenge.question}</p>
                     {revealAnswer ? (
-                      <p className="text-lg text-yellow-200">Answer: {miniChallenge.answer}</p>
+                      <p className="text-lg text-yellow-200">
+                        Answer: {miniChallenge.answer}
+                      </p>
                     ) : (
-                      <Button 
+                      <Button
                         onClick={() => setRevealAnswer(true)}
                         className="bg-[#5477f0] hover:bg-[#0b3eea] text-white"
                       >
@@ -168,39 +195,47 @@ function App() {
                   exit="exit"
                   className="text-4xl font-bold text-white"
                 >
-                  Well done team, see you next week !! 
+                  Well done team, see you next week !!
                 </motion.h1>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {!isComplete && <Button
-            size="lg"
-            disabled={isComplete}
-            onClick={selectRandomName}
-            className="bg-[#0b3eea] hover:bg-[#2351ec] text-white gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 w-64"
-          >
-            <Shuffle className="w-4 h-4"/>
-            Select Random Name
-          </Button>}
+          {!isComplete && (
+            <Button
+              size="lg"
+              disabled={isComplete}
+              onClick={selectRandomName}
+              className="bg-[#0b3eea] hover:bg-[#2351ec] text-white gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 w-64"
+            >
+              <Shuffle className="w-4 h-4" />
+              Select Random Name
+            </Button>
+          )}
 
-          {isComplete && <Button
-            size="lg"
-            disabled={showCelebration}
-            onClick={endHuddle}
-            className="bg-[#0b3eea] hover:bg-[#2351ec] text-white gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 w-64"
-          >
-            <ArrowRightCircleIcon className="w-4 h-4"/>
-            End huddle
-          </Button>}
+          {isComplete && (
+            <Button
+              size="lg"
+              disabled={showCelebration}
+              onClick={endHuddle}
+              className="bg-[#0b3eea] hover:bg-[#2351ec] text-white gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 w-64"
+            >
+              <ArrowRightCircleIcon className="w-4 h-4" />
+              End huddle
+            </Button>
+          )}
 
           <div className="flex justify-center items-center gap-4">
-            <Button 
-              onClick={toggleMute} 
-              title={isMuted ? "Unmute SFX" : "Mute SFX"} 
+            <Button
+              onClick={toggleMute}
+              title={isMuted ? "Unmute SFX" : "Mute SFX"}
               className="bg-transparent w-10 h-10 rounded-full hover:bg-gray-700 text-white p-2 transition-all duration-300 ease-in-out transform hover:scale-105"
             >
-              {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+              {isMuted ? (
+                <VolumeX className="w-6 h-6" />
+              ) : (
+                <Volume2 className="w-6 h-6" />
+              )}
             </Button>
             <Button
               size="sm"
@@ -212,10 +247,10 @@ function App() {
             </Button>
           </div>
 
-          <div className='flex justify-center items-center'>
-            <ProgressCounter 
-              current={usedNames.length} 
-              total={PARTICIPANT_NAMES.length} 
+          <div className="flex justify-center items-center">
+            <ProgressCounter
+              current={usedNames.length}
+              total={PARTICIPANT_NAMES.length}
             />
           </div>
 
@@ -235,4 +270,3 @@ function App() {
 }
 
 export default App;
-
