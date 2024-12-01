@@ -1,7 +1,21 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
+import cat1 from '/images/cat1.gif';
+import cat2 from '/images/cat2.gif';
+import cat3 from '/images/cat3.gif';
+import cat4 from '/images/cat4.gif';
+import cat5 from '/images/cat5.gif';
+import cat6 from '/images/cat6.gif';
 // import Lottie from 'lottie-react';
 // import celebrationAnimation from '../assets/celebration.json';
+const gifs=[
+  cat1,
+  cat2,
+  cat3,
+  cat4,
+  cat5,
+  cat6,
+]
 
 export function Celebration() {
   useEffect(() => {
@@ -49,7 +63,7 @@ export function Celebration() {
         className="absolute top-0 w-full h-full"
       /> */}
       <img 
-        src={`./weekly_huddle/images/cat${Math.floor(Math.random() * 6) + 1}.gif`} 
+        src={gifs[Math.floor(Math.random() * 6) + 1]} 
         alt="Random Cat" 
         className="  object-contain mt-4 top-0 "
       />
