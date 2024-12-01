@@ -46,6 +46,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.0.8",
+    "gh-pages": "^6.2.0",
     "input-otp": "^1.2.4",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.446.0",
