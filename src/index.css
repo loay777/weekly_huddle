@@ -70,7 +70,36 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
 
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.125rem; /* text-lg equivalent */
+  letter-spacing: 0.025em;
+}
+
+.marquee-wrapper:hover .marquee-content {
+  animation-play-state: marquee 50s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

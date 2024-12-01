@@ -49,7 +49,7 @@ export function Celebration() {
         className="absolute top-0 w-full h-full"
       /> */}
       <img 
-        src={`./weekly_huddle/images/cat${Math.floor(Math.random() * 5) + 1}.gif`} 
+        src={`./weekly_huddle/images/cat${Math.floor(Math.random() * 6) + 1}.gif`} 
         alt="Random Cat" 
         className="  object-contain mt-4 top-0 "
       />
