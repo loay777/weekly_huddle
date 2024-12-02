@@ -1,7 +1,13 @@
+import click8 from "./sounds/click8.mp3";
+import click9 from "./sounds/click9.mp3";
+import click6 from "./sounds/click6.mp3";
+import click4 from "./sounds/click4.mp3";
+import complete1 from './sounds/complete1.mp3';
+
 // Collection of sound effects
 const sounds = {
-  click: new Audio('./weekly_huddle/sounds/click.mp3'),
-  complete: new Audio('./weekly_huddle/sounds/complete1.mp3')
+  click: new Audio('./sounds/click.mp3'),
+  complete: new Audio(complete1)
 };
 
 // Initialize all sounds with proper settings
@@ -11,20 +17,20 @@ Object.values(sounds).forEach(sound => {
 
 // Define click sounds
 const clickSounds = [
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click9.mp3'),
-    new Audio('./weekly_huddle/sounds/click6.mp3'),
-    new Audio('./weekly_huddle/sounds/click8.mp3'),
-    new Audio('./weekly_huddle/sounds/click4.mp3'),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click8),
+    new Audio(click9),
+    new Audio(click6),
+    new Audio(click8),
+    new Audio(click4),
 ];
 
 Object.values(clickSounds).forEach(sound => {
