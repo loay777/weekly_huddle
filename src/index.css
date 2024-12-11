@@ -82,14 +82,14 @@ button:focus-visible {
   align-items: center;
   min-width: 100%;
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 60s linear infinite;
   color: rgba(255,255,255,0.8);
   font-size: 1.125rem; /* text-lg equivalent */
   letter-spacing: 0.025em;
 }
 
 .marquee-wrapper:hover .marquee-content {
-  animation-play-state: marquee 50s linear infinite;
+  animation-play-state: marquee 20s linear infinite;
 }
 
 @keyframes marquee {

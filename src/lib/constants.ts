@@ -1,38 +1,71 @@
 // List of participant names
 export const PARTICIPANT_NAMES = [
-  "Ahmed Ali",
-  "Mohammed Saeed", 
-  "Abdullah Khalid",
-  "Faisal Omar",
-  "Nasser Abdulrahman",
-  "Saif Majed",
-  "Salman Fahad",
-  "Ibrahim Hassan",
-  "Hamad Zaid",
-  "Sultan Mohammed",
-  "Abdulaziz Salem",
-  "Omar Turki",
-  "Khaled Jaber",
-  "Youssef Ayman",
-  "Rakan Talal"
+  "Ashely Kent 🏄🏼",
+  "George Samuel 🧑🏻‍🎨",
+  "Abdulaziz Turkistani 💸",
+  "Asma Mahfouz 👩🏻‍⚕️",
+  "Abdulkhaliq Alzahrani",
+  "Ahmad Borham 👨🏻‍💻",
+  "Lamees Tayeb",
+  "Hanouf Saleh",
+  "Mosaab Mohamed",
+  "Ghofran Ahmad",
+  "Alhanouf Aloufi",
+  "Mohannad Alamrah",
+  "Mohammed Nagy 🧑🏽‍🦲🫱🏽‍🫲🏼",
+  "Abeer Alnetaifi",
+  "Mohamed Reyad",
+  "Yara Alsafty",
+  "Medhat Meebed",
+  "Bahaa Alhagar",
+  "Kholood Saleh",
+  "Ahmed Refaat",
+  "Iman AlSayed",
+  "Sondos Saleh",
+  "Khaled Saleh",
+  "Muhammad Amin",
+  "Toqa Mohammed Awf",
+  "Loay Alsaeed",
+  "Fatima Abdelfatah 💰",
+  "Mohamed Arafa",
+  "Ahmed Fathy 🆕",
+  "Rinad Alghamdi 🆕",
+  "Muhammad Mandourah🆕",
+  "Reem Osman 🆕" 
 ];
 
 export const MYSTERY_PRIZES = [
   "A virtual high-five! 👋",
   "Bragging rights for the week 🏆",
-  "1Pass champ",
+  "Free access to wifi 🛜",
   "Immunity from next week's dad jokes 😂",
   "A digital gold star ⭐",
-  "Chief Meme Curator for the day 🧑‍💻",
-  "Permission to use the fancy coffee mug 🍵",
+  "Chief Meme Operations for the day 🧑‍💻",
+  "Permission to use the coffee machine ☕️",
   "Lifetime supply of… compliments (limited to one week) 💬",
   "Exclusive use of the office playlist DJ controls 🎧",
   "Priority access to the office beanbag chair 🛋️",
-  "The honorary title of \"Desk Ninja\" for a day 🥷",
+  // "The honorary title of \"Desk Ninja\" for a day 🥷",
   "The Proof that coffee and determination can substitute for talent ☕️",
   "He puts the 'why' in Wi-Fi 🛜",
   "The reason we have a 'no refunds' policy 🌚",
   "The human equivalent of an 'Are you sure?' pop-up 💬",
+  "A virtual cookie 🍪",
+  "A personalized motivational quote for the week 📝",
+  "A day of no meetings 📅.....not",
+  "A custom playlist made just for you 🎶",
+  "A free lunch voucher for 0 🍔",
+  "A shoutout in the next team meeting 📣",
+  "A desk plant of your choice 🌱",
+  "A coffee mug with your name on it ☕️",
+  "A 'Get Out of Work Free' card for one hour ⏳",
+  "A fun desk toy to keep you entertained 🎲",
+  "A mystery box of office supplies 📦",
+  "A 'Thank You' note from the team 💌",
+  "A chance to lead the next team-building activity 🎉",
+  "A custom emoji created just for you 😊",
+  "A 'No Work' day to recharge your batteries 🔋",
+  "A fun hat to wear for a day 🎩",
 ];
 
 export const MINI_CHALLENGES = [
@@ -116,59 +149,103 @@ export const MINI_CHALLENGES = [
 
 export const EMPLOYEES_OF_THE_WEEK = [
   {
-    "employeeName": "Ahmed Mohsin",
-    "emoji": "🥸"
+    "employeeName": "Nagy: ",
+    "emoji": "the most iconic glasses at the office 👓"
   },
   {
-    "employeeName": "Sarah Khan",
-    "emoji": "😊"
+    "employeeName": "George: ",
+    "emoji": "we all know why....🧑🏻‍🎨"
   },
   {
-    "employeeName": "John Doe",
-    "emoji": "👨‍💼"
+    "employeeName": "Borham: ",
+    "emoji": "Putting AI to shame on daily bases 🧠"
+  },
+  // {
+  //   "employeeName": "Loay: ",
+  //   "emoji": "difenetly didn't write this himself..."
+  // },
+  {
+    "employeeName": "Mosab: ",
+    "emoji": "can attend 2 meetings simultaneously 🫡"
   },
   {
-    "employeeName": "Emily Smith",
-    "emoji": "🌟"
+    "employeeName": "Asma: ",
+    "emoji": "The office Panadol supplier 👩🏻‍⚕️"
   },
   {
-    "employeeName": "Michael Johnson",
-    "emoji": "👨‍🏫"
+    "employeeName": "Ash: ",
+    "emoji": "Make 1Pass Great Again 🧢"
   },
   {
-    "employeeName": "Jessica Lee",
-    "emoji": "🎉"
+    "employeeName": "Mo Arafa: ",
+    "emoji": "can run the daily stand up while sitting down 🧘🏻"
   },
   {
-    "employeeName": "David Brown",
-    "emoji": "👨‍🔧"
+    "employeeName": "Abdulkhaliq: ",
+    "emoji": "true talent, singer after office hours🎤"
   },
   {
-    "employeeName": "Sophia Davis",
-    "emoji": "👩‍🎨"
+    "employeeName": "You're the real MVP:",
+    "emoji": "because you are still reading this 💙💙"
   },
-  {
-    "employeeName": "Jessica Lee",
-    "emoji": "🎉"
-  },
-  {
-    "employeeName": "David Brown",
-    "emoji": "👨‍🔧"
-  },
-  {
-    "employeeName": "Sophia Davis",
-    "emoji": "👩‍🎨"
-  },
-  {
-    "employeeName": "Jessica Lee",
-    "emoji": "🎉"
-  },
-  {
-    "employeeName": "David Brown",
-    "emoji": "👨‍🔧"
-  },
-  {
-    "employeeName": "Sophia Davis",
-    "emoji": "👩‍🎨"
-  },
+  // {
+  //   "employeeName": "David Brown",
+  //   "emoji": "👨‍🔧"
+  // },
+  // {
+  //   "employeeName": "Sophia Davis",
+  //   "emoji": "👩‍🎨"
+  // },
+  // {
+  //   "employeeName": "Jessica Lee",
+  //   "emoji": "🎉"
+  // },
+  // {
+  //   "employeeName": "David Brown",
+  //   "emoji": "👨‍🔧"
+  // },
+  // {
+  //   "employeeName": "Sophia Davis",
+  //   "emoji": "👩‍🎨"
+  // },
 ];
+  // {
+  //   "employeeName":",
+  //   "emoji": "👩‍🔬 CSI Award: Pays attention to detail"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "🤖 Get Smart Award: Uses the most gadgets to be productive"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "😃 Emoji Award: Who's got the best emoji game?"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "⚒️ Home Improvement: Fixes everything at the office"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "🗺️ GPS Award: Most likely to know where everyone is at any given moment"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "🚓 Prison Break: Always trying to find ways around the rules"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "🔶 Orange is the New Black: Most likely to wear orange clothes"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "🎤 A/V Club Award: Most likely to switch headsets multiple times in a call"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "🔔 Saved by the Bell Award: Still thinks they're in high school"
+  // },
+  // {
+  //   "employeeName":",
+  //   "emoji": "📫 Secret UPS Employee Award: Most likely to be waiting for a package"
+  // }

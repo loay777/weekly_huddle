@@ -154,7 +154,7 @@ function App() {
                 )}
 
                 {/* Mini-Challenge Section */}
-                {showMiniChallenge && miniChallenge && (
+                {/* {showMiniChallenge && miniChallenge && (
                   <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -176,7 +176,7 @@ function App() {
                       </Button>
                     )}
                   </motion.div>
-                )}
+                )} */}
               </motion.div>
             ) : (
               <motion.div
@@ -247,12 +247,12 @@ function App() {
             </Button>
           </div>
 
-          <div className="flex justify-center items-center">
+        {  !showCelebration&&<div className="flex justify-center items-center">
             <ProgressCounter
               current={usedNames.length}
               total={PARTICIPANT_NAMES.length}
             />
-          </div>
+          </div>}
 
           <Button
             size="sm"

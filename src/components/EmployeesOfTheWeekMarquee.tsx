@@ -3,7 +3,7 @@ const EmployeesOfTheWeekMarquee = ({
 }) => {
   // Create the marquee text by formatting employees
   const marqueeText = employees.length > 0 
-    ? ` *Employees of the week*: ${employees.map(emp => `${emp.employeeName} ${emp.emoji}`).join(' - ')}.\u00A0\u00A0\u00A0`
+    ? ` *Employees of the week*: ${employees.map(emp => `${emp.employeeName} ${emp.emoji}`).join(' | ')}.\u00A0\u00A0\u00A0`
     : "No employees selected this week";
 
   return (

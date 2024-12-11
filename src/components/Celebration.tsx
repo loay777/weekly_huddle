@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import cat1 from '/images/cat1.gif';
-import cat2 from '/images/cat2.gif';
-import cat3 from '/images/cat3.gif';
-import cat4 from '/images/cat4.gif';
-import cat5 from '/images/cat5.gif';
-import cat6 from '/images/cat6.gif';
+import cat1 from './images/cat1.gif';
+import cat2 from './images/cat2.gif';
+import cat3 from './images/cat3.gif';
+import cat4 from './images/cat4.gif';
+import cat5 from './images/cat5.gif';
+import cat6 from './images/cat6.gif';
 // import Lottie from 'lottie-react';
 // import celebrationAnimation from '../assets/celebration.json';
 const gifs=[
@@ -19,7 +19,7 @@ const gifs=[
 
 export function Celebration() {
   useEffect(() => {
-    const duration = 3 * 1000;
+    const duration = 5 * 1000;
     const animationEnd = Date.now() + duration;
 
     const randomInRange = (min: number, max: number) => {
@@ -63,7 +63,7 @@ export function Celebration() {
         className="absolute top-0 w-full h-full"
       /> */}
       <img 
-        src={gifs[Math.floor(Math.random() * 6) + 1]} 
+        src={gifs[Math.floor(Math.random() * 6) ]} 
         alt="Random Cat" 
         className="  object-contain mt-4 top-0 "
       />
