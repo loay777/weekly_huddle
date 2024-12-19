@@ -148,14 +148,24 @@ console.log(revealAnswer);
                     className="  bg-white/5  rounded-lg p-4 flex items-center gap-2"
                   >
                     <motion.div
-                      animate={{ rotate: [-10, 10, -10] }}
-                      transition={{ repeat: Infinity, duration: 1 }}
+                      animate={{ rotate: [-10, 10, -10],
+                          // scale:[1.2,1,1.1,1.2]
+                       }}
+                      transition={{ repeat: Infinity, duration: 0.75 }}
                     >
-                      <Gift className="w-6 h-6" />
+                      <Gift className="w-6 h-6" /> 
+                      {/* 🎁 */}
                     </motion.div>
                     <span className="text-xl">
                       Mystery Prize: {mysteryPrize}
                     </span>
+                    <motion.div
+                      animate={{ rotate: [-10, 10, -10] }}
+                      transition={{ repeat: Infinity, duration: 0.75 }}
+                    >
+                      <Gift className="w-6 h-6" /> 
+                      {/* 🎁 */}
+                    </motion.div>
                   </motion.div>
                 )}
 
@@ -253,12 +263,14 @@ console.log(revealAnswer);
             </Button>
           </div>
 
-        {  !showCelebration&&<div className="flex justify-center items-center">
-            <ProgressCounter
-              current={usedNames.length}
-              total={PARTICIPANT_NAMES.length}
-            />
-          </div>}
+          {!showCelebration && (
+            <div className="flex justify-center items-center">
+              <ProgressCounter
+                current={usedNames.length}
+                total={PARTICIPANT_NAMES.length}
+              />
+            </div>
+          )}
 
           <Button
             size="sm"
