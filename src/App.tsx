@@ -8,8 +8,7 @@ import {
   UndoIcon,
   Volume2,
   VolumeX,
-  StickerIcon,
-  TrophyIcon,
+  Gift,
 } from "lucide-react";
 import { TimeBadge } from "./components/TimeBadge";
 import { ProgressCounter } from "./components/ProgressCounter";
@@ -39,9 +38,11 @@ function App() {
     question: string;
     answer: string;
   } | null>(null);
+  console.log(miniChallenge);
   const [showMiniChallenge, setShowMiniChallenge] = useState(false);
   const [revealAnswer, setRevealAnswer] = useState(false);
-
+console.log(showMiniChallenge);
+console.log(revealAnswer);
   const selectRandomName = () => {
     const availableNames = names.filter((name) => !usedNames.includes(name));
     if (availableNames.length > 0) {
@@ -146,9 +147,14 @@ function App() {
                     animate={{ scale: 1, opacity: 1 }}
                     className="  bg-white/5  rounded-lg p-4 flex items-center gap-2"
                   >
-                    <TrophyIcon className="w-6 h-6" />
+                    <motion.div
+                      animate={{ rotate: [-10, 10, -10] }}
+                      transition={{ repeat: Infinity, duration: 1 }}
+                    >
+                      <Gift className="w-6 h-6" />
+                    </motion.div>
                     <span className="text-xl">
-                      Mystery award: {mysteryPrize}
+                      Mystery Prize: {mysteryPrize}
                     </span>
                   </motion.div>
                 )}
@@ -270,3 +276,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
