@@ -30,7 +30,8 @@ export const PARTICIPANT_NAMES = [
   "Rinad Alghamdi",
   "Muhammad Mandourah",
   "Reem Osman",
-  "Islam Mohamedali 🆕" 
+  "Islam Mohamedali", 
+  "Esra Algammal 🆕" 
 ];
 
 // List of Random Prizes
