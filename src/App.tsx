@@ -9,28 +9,33 @@ import {
   Volume2,
   VolumeX,
   Gift,
+  Edit,
 } from "lucide-react";
 import { TimeBadge } from "./components/TimeBadge";
 import { ProgressCounter } from "./components/ProgressCounter";
-import { Celebration } from "./components/Celebration";
+// import { Celebration } from "./components/Celebration";
 import {
   PARTICIPANT_NAMES,
   MYSTERY_PRIZES,
   MINI_CHALLENGES,
-  EMPLOYEES_OF_THE_WEEK,
+  // EMPLOYEES_OF_THE_WEEK,
 } from "./lib/constants";
 import { nameVariants, celebrationVariants } from "./lib/animations";
 import { playRandomClickSound, playSound } from "./lib/sounds";
-import EmployeesOfTheWeekMarquee from "./components/EmployeesOfTheWeekMarquee";
+// import EmployeesOfTheWeekMarquee from "./components/EmployeesOfTheWeekMarquee";
 import logo from "/logo-1pass.svg";
+// import { NewYearCelebration } from "./components/NewYearCelebration";
+import { Celebration } from "./components/Celebration";
+import { ParticipantsDrawer } from "./components/ParticipantsDrawer";
 
 function App() {
-  const [names] = useState([...PARTICIPANT_NAMES]);
+  const [names, setNames] = useState<string[]>([...PARTICIPANT_NAMES]);
   const [currentName, setCurrentName] = useState<string | null>(null);
   const [usedNames, setUsedNames] = useState<string[]>([]);
   const [previousNames, setPreviousNames] = useState<string[]>([]);
   const [isMuted, setIsMuted] = useState(false);
   const [showCelebration, setShowcelebration] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   // New states for Mystery Prize and Mini-Challenge
   const [mysteryPrize, setMysteryPrize] = useState<string | null>(null);
@@ -109,14 +114,36 @@ console.log(revealAnswer);
     setShowMiniChallenge(false);
   };
 
-  const isComplete = usedNames.length === PARTICIPANT_NAMES.length;
+  const handleSaveParticipants = (newNames: string[]) => {
+    setNames(newNames);
+    
+    // Reset used names that are no longer in the list
+    setUsedNames(prev => prev.filter(name => newNames.includes(name)));
+    
+    // If current name is no longer in the list, reset it
+    if (currentName && !newNames.includes(currentName)) {
+      setCurrentName(null);
+    }
+  };
+
+  const isComplete = usedNames.length === names.length;
 
   return (
     <div className="w-screen h-screen bg-[#0e0e10] text-white p-6">
       <div className="p-6 h-full">
         <div className="flex justify-between items-center">
-          <img src={logo} alt="1Password Logo" />
-          <TimeBadge />
+          <img src={logo} alt="1Password Logo" className="z-50" />
+          <div className="flex items-center gap-4">
+            <Button
+              size="sm"
+              onClick={() => setIsDrawerOpen(true)}
+              title="Edit participants"
+              className="bg-transparent rounded-full hover:bg-gray-700 text-white p-2 transition-all duration-300 ease-in-out transform hover:scale-105"
+            >
+              <Edit className="w-5 h-5" />
+            </Button>
+            <TimeBadge />
+          </div>
         </div>
 
         <div className="text-center h-full flex flex-col justify-center items-center gap-9">
@@ -148,12 +175,13 @@ console.log(revealAnswer);
                     className="  bg-white/5  rounded-lg p-4 flex items-center gap-2"
                   >
                     <motion.div
-                      animate={{ rotate: [-10, 10, -10],
-                          // scale:[1.2,1,1.1,1.2]
-                       }}
+                      animate={{
+                        rotate: [-10, 10, -10],
+                        // scale:[1.2,1,1.1,1.2]
+                      }}
                       transition={{ repeat: Infinity, duration: 0.75 }}
                     >
-                      <Gift className="w-6 h-6" /> 
+                      <Gift className="w-6 h-6" />
                       {/* 🎁 */}
                     </motion.div>
                     <span className="text-xl">
@@ -163,7 +191,7 @@ console.log(revealAnswer);
                       animate={{ rotate: [-10, 10, -10] }}
                       transition={{ repeat: Infinity, duration: 0.75 }}
                     >
-                      <Gift className="w-6 h-6" /> 
+                      <Gift className="w-6 h-6" />
                       {/* 🎁 */}
                     </motion.div>
                   </motion.div>
@@ -203,6 +231,7 @@ console.log(revealAnswer);
                 exit="exit"
               >
                 <Celebration />
+                {/* <NewYearCelebration /> */}
                 <motion.h1
                   key={currentName}
                   variants={nameVariants}
@@ -229,12 +258,12 @@ console.log(revealAnswer);
             </Button>
           )}
 
-          {isComplete && (
+          {isComplete && !showCelebration && (
             <Button
               size="lg"
               disabled={showCelebration}
               onClick={endHuddle}
-              className="bg-[#0b3eea] hover:bg-[#2351ec] text-white gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 w-64"
+              className="bg-[#0b3eea]  hover:bg-[#2351ec] text-white gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 w-64"
             >
               <ArrowRightCircleIcon className="w-4 h-4" />
               End huddle
@@ -267,7 +296,7 @@ console.log(revealAnswer);
             <div className="flex justify-center items-center">
               <ProgressCounter
                 current={usedNames.length}
-                total={PARTICIPANT_NAMES.length}
+                total={names.length}
               />
             </div>
           )}
@@ -282,7 +311,14 @@ console.log(revealAnswer);
           </Button>
         </div>
       </div>
-      <EmployeesOfTheWeekMarquee employees={EMPLOYEES_OF_THE_WEEK} />
+      {/* <EmployeesOfTheWeekMarquee employees={EMPLOYEES_OF_THE_WEEK} /> */}
+      
+      <ParticipantsDrawer
+        isOpen={isDrawerOpen}
+        onOpenChange={setIsDrawerOpen}
+        participantNames={names}
+        onSave={handleSaveParticipants}
+      />
     </div>
   );
 }

@@ -2,7 +2,8 @@ import click8 from "./sounds/click8.mp3";
 import click9 from "./sounds/click9.mp3";
 import click6 from "./sounds/click6.mp3";
 import click4 from "./sounds/click4.mp3";
-import complete1 from './sounds/complete1.mp3';
+import complete1 from './sounds/yay.mp3';
+// import yay from './sounds/yay.mp3';
 
 // Collection of sound effects
 const sounds = {
@@ -12,7 +13,7 @@ const sounds = {
 
 // Initialize all sounds with proper settings
 Object.values(sounds).forEach(sound => {
-  sound.volume = 0.1;
+  sound.volume = 0.3;
 });
 
 // Define click sounds

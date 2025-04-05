@@ -10,11 +10,19 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  /* Hide scrollbars while maintaining scroll functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 a {
@@ -82,7 +90,7 @@ button:focus-visible {
   align-items: center;
   min-width: 100%;
   white-space: nowrap;
-  animation: marquee 60s linear infinite;
+  animation: marquee 30s linear infinite;
   color: rgba(255,255,255,0.8);
   font-size: 1.125rem; /* text-lg equivalent */
   letter-spacing: 0.025em;

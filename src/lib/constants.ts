@@ -15,14 +15,14 @@ export const PARTICIPANT_NAMES = [
   "Abeer Alnetaifi",
   "Mohamed Eltahawy",
   "Yara Alsafty",
-  "Medhat Meebed",
   "Bahaa Alhagar",
   "Kholood Saleh",
-  "Ahmed Refaat",
+  "Mohammed Sabry",
   "Sondos Saleh",
   "Khaled Saleh",
-  "Muhammad Amin",
   "Toqa Awf",
+  "Sabry Mohsen",
+  "Bayan Algarni",
   "Loay Alsaeed",
   "Fatima Abdelfatah",
   "Mohamed Arafa",
@@ -31,7 +31,9 @@ export const PARTICIPANT_NAMES = [
   "Muhammad Mandourah",
   "Reem Osman",
   "Islam Mohamedali", 
-  "Esra Algammal 🆕" 
+  "Bassam Saber",
+  "Hossam almehmadi",
+  "Ahmed Fawzi"
 ];
 
 // List of Random Prizes
@@ -46,25 +48,26 @@ export const MYSTERY_PRIZES = [
   "Lifetime supply of… compliments (limited to one week) 💬",
   "Exclusive use of the office playlist DJ controls 🎧",
   "Priority access to the office beanbag chair 🛋️",
+  "A an all expenses paid trip to the nearest window 🪟",
   // "The Proof that coffee and determination can substitute for talent ☕️",
   // "Puts the 'why' in Wi-Fi 🛜",
   // "The reason we have a 'no refunds' policy 🌚",
   // "The human equivalent of an 'Are you sure?' pop-up 💬",
   "A virtual cookie 🍪",
-  "A personalized motivational quote for the week 📝",
-  "A day of no meetings 📅.....not",
+  // "A personalized motivational quote for the week 📝",
+  "A day of no meetings 📅",
   "A custom playlist made just for you 🎶",
-  "A free lunch voucher 🍔",
+  "A free lunch voucher for 0 people 🍔",
   "A shoutout in the next team meeting 📣",
   "A desk plant of your choice 🌱",
-  "A coffee mug with your name on it ☕️",
+  "A new coffee mug ☕️",
   "A 'Get Out of Work Free' card for one hour ⏳",
-  "A fun desk toy to keep you entertained 🎲",
-  "A mystery box of office supplies 📦",
+  // "A fun desk toy to keep you entertained 🎲",
+  // "A mystery box of office supplies 📦",
   "A 'Thank You' note from the team 💌",
   "A chance to lead the next team-building activity 🎉",
-  "A custom emoji created just for you 😊",
-  "A 'No Work' day to recharge your batteries 🔋",
+  // "A custom emoji created just for you 😊",
+  // "A 'No Work' day to recharge your batteries 🔋",
   "A fun hat to wear for a day 🎩",
 ];
 
@@ -148,10 +151,14 @@ export const MINI_CHALLENGES = [
 ];
 
 export const EMPLOYEES_OF_THE_WEEK = [
-  // {
-  //   "employeeName": "Nagy: ",
-  //   "emoji": "the most iconic glasses at the office 👓"
-  // },
+  {
+    "employeeName": "",
+    "emoji": "🎉 Happy New Year to all!! 🎉 "
+  },
+  {
+    "employeeName": "",
+    "emoji": "💙 May this year be filled with laughter, love, and all the good things life has to offer 💙 "
+  },
   // {
   //   "employeeName": "George: ",
   //   "emoji": "we all know why....🧑🏻‍🎨"
