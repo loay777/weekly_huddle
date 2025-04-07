@@ -41,16 +41,18 @@ export function ParticipantsDrawer({
         <Drawer.Content className="bg-[#0e0e10] flex flex-col rounded-t-[10px] h-[90%] mt-24 fixed bottom-0 left-0 right-0">
           <div className="p-4 bg-[#0e0e10] rounded-t-[10px] flex-1 overflow-auto">
             <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
-            
+
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-semibold text-white">Edit Participants</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Edit Participants
+              </h3>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => onOpenChange(false)}
-                className="rounded-full h-8 w-8 text-white"
+                className="bg-transparent w-10 h-10 rounded-full hover:bg-gray-700 text-white p-2 transition-all duration-300 ease-in-out transform hover:scale-105"
               >
-                <X className="h-4 w-4" />
+                <X className="h-4 w-4" color="white" />
               </Button>
             </div>
 

@@ -152,12 +152,16 @@ export const MINI_CHALLENGES = [
 
 export const EMPLOYEES_OF_THE_WEEK = [
   {
-    "employeeName": "",
-    "emoji": "🎉 Happy New Year to all!! 🎉 "
+    employeeName: "",
+    emoji: " Eid Mubarak!! 🎉 🎉",
   },
   {
-    "employeeName": "",
-    "emoji": "💙 May this year be filled with laughter, love, and all the good things life has to offer 💙 "
+    employeeName: "",
+    emoji: "💙 1Pass Family 💙 ",
+  },
+  {
+    employeeName: "New Huddle App Updates!",
+    emoji: "You can now edit the list of participants by clicking the edit icon at the top right side next to the date and time! 📝",
   },
   // {
   //   "employeeName": "George: ",

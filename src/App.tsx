@@ -18,7 +18,7 @@ import {
   PARTICIPANT_NAMES,
   MYSTERY_PRIZES,
   MINI_CHALLENGES,
-  // EMPLOYEES_OF_THE_WEEK,
+  EMPLOYEES_OF_THE_WEEK,
 } from "./lib/constants";
 import { nameVariants, celebrationVariants } from "./lib/animations";
 import { playRandomClickSound, playSound } from "./lib/sounds";
@@ -27,13 +27,14 @@ import logo from "/logo-1pass.svg";
 // import { NewYearCelebration } from "./components/NewYearCelebration";
 import { Celebration } from "./components/Celebration";
 import { ParticipantsDrawer } from "./components/ParticipantsDrawer";
+import EmployeesOfTheWeekMarquee from "./components/EmployeesOfTheWeekMarquee";
 
 function App() {
   const [names, setNames] = useState<string[]>([...PARTICIPANT_NAMES]);
   const [currentName, setCurrentName] = useState<string | null>(null);
   const [usedNames, setUsedNames] = useState<string[]>([]);
   const [previousNames, setPreviousNames] = useState<string[]>([]);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [showCelebration, setShowcelebration] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -311,7 +312,7 @@ console.log(revealAnswer);
           </Button>
         </div>
       </div>
-      {/* <EmployeesOfTheWeekMarquee employees={EMPLOYEES_OF_THE_WEEK} /> */}
+      <EmployeesOfTheWeekMarquee employees={EMPLOYEES_OF_THE_WEEK} />
       
       <ParticipantsDrawer
         isOpen={isDrawerOpen}
