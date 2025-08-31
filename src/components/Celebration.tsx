@@ -79,6 +79,7 @@ export function Celebration() {
         alt="Random Cat"
         className="  object-contain mt-4 top-0 "
       />
+     
       {/* <Fireworks
         ref={ref}
         options={{

@@ -1,14 +1,11 @@
 // List of participant names
 export const PARTICIPANT_NAMES = [
   "Ashely Kent",
-  "George Samuel",
   "Abdulaziz Turkistani",
   "Asma Mahfouz",
   "Abdulkhaliq Alzahrani",
   "Ahmad Borham",
   "Lamees Tayeb",
-  "Hanouf Saleh",
-  "Mosaab Mohamed",
   "Ghofran Ahmad",
   "Mohannad Alamrah",
   "Mohammed Nagy",
@@ -17,7 +14,6 @@ export const PARTICIPANT_NAMES = [
   "Yara Alsafty",
   "Bahaa Alhagar",
   "Kholood Saleh",
-  "Mohammed Sabry",
   "Sondos Saleh",
   "Khaled Saleh",
   "Toqa Awf",
@@ -27,13 +23,28 @@ export const PARTICIPANT_NAMES = [
   "Fatima Abdelfatah",
   "Mohamed Arafa",
   "Ahmed Fathy",
-  "Rinad Alghamdi",
   "Muhammad Mandourah",
   "Reem Osman",
-  "Islam Mohamedali", 
+  "Islam Mohamedali",
   "Bassam Saber",
   "Hossam almehmadi",
-  "Ahmed Fawzi"
+  "Basim Saeed",
+  "Hatem Ibrahim",
+  "Mohamed Maree",
+  "Rafah Alqueiti",
+  "Sarah Alattas",
+  "Raghad Alotaibi",
+  "Joud Alsh",
+  "Hussein A.Rahman",
+  "Raghad AlGhfili",
+  "Taif Alhothali",
+  "Wasayf Alsuwayh",
+  "Omar Talib",
+  "Amira Almashjary",
+  "Rawan Foudah",
+  "Asmaa Almajayishi",
+  "Bader Saeed",
+  "Rahaf Hamzah",
 ];
 
 // List of Random Prizes
@@ -73,81 +84,85 @@ export const MYSTERY_PRIZES = [
 
 export const MINI_CHALLENGES = [
   {
-    "question": "What comes once in a minute, twice in a moment, but never in a thousand years?",
-    "answer": "The letter 'M'"
+    question:
+      "What comes once in a minute, twice in a moment, but never in a thousand years?",
+    answer: "The letter 'M'",
   },
   {
-    "question": "I’m light as a feather, yet the strongest person can’t hold me for more than a minute. What am I?",
-    "answer": "Your breath"
+    question:
+      "I’m light as a feather, yet the strongest person can’t hold me for more than a minute. What am I?",
+    answer: "Your breath",
   },
   {
-    "question": "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
-    "answer": "A map"
+    question:
+      "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+    answer: "A map",
   },
   {
-    "question": "What has hands but can’t clap?",
-    "answer": "A clock"
+    question: "What has hands but can’t clap?",
+    answer: "A clock",
   },
   {
-    "question": "I’m tall when I’m young, and I’m short when I’m old. What am I?",
-    "answer": "A candle"
+    question: "I’m tall when I’m young, and I’m short when I’m old. What am I?",
+    answer: "A candle",
   },
   {
-    "question": "What has to be broken before you can use it?",
-    "answer": "An egg"
+    question: "What has to be broken before you can use it?",
+    answer: "An egg",
   },
   {
-    "question": "What gets wetter the more it dries?",
-    "answer": "A towel"
+    question: "What gets wetter the more it dries?",
+    answer: "A towel",
   },
   {
-    "question": "I’m always in front of you but can’t be seen. What am I?",
-    "answer": "The future"
+    question: "I’m always in front of you but can’t be seen. What am I?",
+    answer: "The future",
   },
   {
-    "question": "What has an eye but can’t see?",
-    "answer": "A needle"
+    question: "What has an eye but can’t see?",
+    answer: "A needle",
   },
   {
-    "question": "What has a neck but no head?",
-    "answer": "A bottle"
+    question: "What has a neck but no head?",
+    answer: "A bottle",
   },
   {
-    "question": "What has four wheels and flies?",
-    "answer": "A garbage truck"
+    question: "What has four wheels and flies?",
+    answer: "A garbage truck",
   },
   {
-    "question": "The more you take away, the bigger I get. What am I?",
-    "answer": "A hole"
+    question: "The more you take away, the bigger I get. What am I?",
+    answer: "A hole",
   },
   {
-    "question": "What runs all around a backyard but never moves?",
-    "answer": "A fence"
+    question: "What runs all around a backyard but never moves?",
+    answer: "A fence",
   },
   {
-    "question": "I’m not alive, but I can grow. I don’t have lungs, but I need air. I don’t have a mouth, and yet water kills me. What am I?",
-    "answer": "Fire"
+    question:
+      "I’m not alive, but I can grow. I don’t have lungs, but I need air. I don’t have a mouth, and yet water kills me. What am I?",
+    answer: "Fire",
   },
   {
-    "question": "What has many teeth but can’t bite?",
-    "answer": "A comb"
+    question: "What has many teeth but can’t bite?",
+    answer: "A comb",
   },
   {
-    "question": "What begins with an ‘e’ and contains one letter?",
-    "answer": "An envelope"
+    question: "What begins with an ‘e’ and contains one letter?",
+    answer: "An envelope",
   },
   {
-    "question": "What can fill a room but takes up no space?",
-    "answer": "Light"
+    question: "What can fill a room but takes up no space?",
+    answer: "Light",
   },
   {
-    "question": "What has one head, one foot, and four legs?",
-    "answer": "A bed"
+    question: "What has one head, one foot, and four legs?",
+    answer: "A bed",
   },
   {
-    "question": "What comes down but never goes up?",
-    "answer": "Rain"
-  }
+    question: "What comes down but never goes up?",
+    answer: "Rain",
+  },
 ];
 
 export const EMPLOYEES_OF_THE_WEEK = [
@@ -161,7 +176,8 @@ export const EMPLOYEES_OF_THE_WEEK = [
   },
   {
     employeeName: "New Huddle App Updates!",
-    emoji: "You can now edit the list of participants by clicking the edit icon at the top right side next to the date and time! 📝",
+    emoji:
+      "You can now edit the list of participants by clicking the edit icon at the top right side next to the date and time! 📝",
   },
   // {
   //   "employeeName": "George: ",

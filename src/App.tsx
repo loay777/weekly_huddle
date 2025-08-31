@@ -18,7 +18,7 @@ import {
   PARTICIPANT_NAMES,
   MYSTERY_PRIZES,
   MINI_CHALLENGES,
-  EMPLOYEES_OF_THE_WEEK,
+  // EMPLOYEES_OF_THE_WEEK,
 } from "./lib/constants";
 import { nameVariants, celebrationVariants } from "./lib/animations";
 import { playRandomClickSound, playSound } from "./lib/sounds";
@@ -27,7 +27,10 @@ import logo from "/logo-1pass.svg";
 // import { NewYearCelebration } from "./components/NewYearCelebration";
 import { Celebration } from "./components/Celebration";
 import { ParticipantsDrawer } from "./components/ParticipantsDrawer";
-import EmployeesOfTheWeekMarquee from "./components/EmployeesOfTheWeekMarquee";
+import Coin from "./components/ui/Coin";
+import CoinsDrop from "./components/ui/Coins-Drop";
+import MouseCoinChaser from "./components/ui/MouseCoinChasre";
+// import EmployeesOfTheWeekMarquee from "./components/EmployeesOfTheWeekMarquee";
 
 function App() {
   const [names, setNames] = useState<string[]>([...PARTICIPANT_NAMES]);
@@ -130,7 +133,10 @@ console.log(revealAnswer);
   const isComplete = usedNames.length === names.length;
 
   return (
-    <div className="w-screen h-screen bg-[#0e0e10] text-white p-6">
+    <div className="w-screen h-screen bg-[#0e0e10] text-white p-6 overflow-hidden">
+       <div className="absolute w-full -z-100 ">
+        <MouseCoinChaser />
+      </div>
       <div className="p-6 h-full">
         <div className="flex justify-between items-center">
           <img src={logo} alt="1Password Logo" className="z-50" />
@@ -310,10 +316,22 @@ console.log(revealAnswer);
           >
             <ListRestart className="w-6 h-6" />
           </Button>
+
+          {!showCelebration && (
+            <div className="absolute -translate-x-[43rem] translate-y-[220px] overflow-clip h-80">
+              <Coin />
+            </div>
+          )}
+          {showCelebration && (
+            <div className="absolute w-full ">
+              <CoinsDrop />
+            </div>
+          )}
         </div>
       </div>
-      <EmployeesOfTheWeekMarquee employees={EMPLOYEES_OF_THE_WEEK} />
-      
+     
+      {/* <EmployeesOfTheWeekMarquee employees={EMPLOYEES_OF_THE_WEEK} /> */}
+
       <ParticipantsDrawer
         isOpen={isDrawerOpen}
         onOpenChange={setIsDrawerOpen}
